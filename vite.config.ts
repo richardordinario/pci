@@ -36,6 +36,9 @@ function vercelApiDev(): Plugin {
   }
 }
 
+// Production URL used for canonical/OG tags in index.html and by scripts/prerender.mjs.
+process.env.VITE_SITE_URL ||= 'https://www.pcitech.com.ph'
+
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss(), vercelApiDev()],

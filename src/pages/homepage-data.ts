@@ -85,16 +85,16 @@ export const TIMELINE = [
 ]
 
 export const PROJECTS = [
-  { slot: "portfolio-aaccup", src: "assets/portfolio/aaccup.png", sector: "Academe", title: "AACCUP Big Data Platform", photo: "AACCUP" },
+  { slot: "portfolio-aaccup", src: "assets/portfolio/aaccup.webp", sector: "Academe", title: "AACCUP Big Data Platform", photo: "AACCUP" },
   {
     slot: "portfolio-lufthansa",
-    src: "assets/portfolio/lufthansa.png",
+    src: "assets/portfolio/lufthansa.webp",
     sector: "Industry",
     title: "Lufthansa for Aviation, Analog for Semicon",
     photo: "Lufthansa and Analog Devices",
   },
-  { slot: "portfolio-sti", src: "assets/portfolio/sti.png", sector: "Academe", title: "STI and Zamboanga Sim Labs", photo: "STI" },
-  { slot: "portfolio-dict", src: "assets/portfolio/dict.png", sector: "Government", title: "DICT MERN Pharma Training", photo: "DICT" },
-  { slot: "portfolio-csc", src: "assets/portfolio/csc.png", sector: "Government", title: "CSC LMS for Nation Building", photo: "CSC" },
+  { slot: "portfolio-sti", src: "assets/portfolio/sti.webp", sector: "Academe", title: "STI and Zamboanga Sim Labs", photo: "STI" },
+  { slot: "portfolio-dict", src: "assets/portfolio/dict.webp", sector: "Government", title: "DICT MERN Pharma Training", photo: "DICT" },
+  { slot: "portfolio-csc", src: "assets/portfolio/csc.webp", sector: "Government", title: "CSC LMS for Nation Building", photo: "CSC" },
   { slot: "portfolio-dost-sei", src: "", sector: "Government", title: "DOST SEI", photo: "DOST SEI.png (Drive: Portfolio)" },
 ]

@@ -12,18 +12,19 @@ type ImageSlotProps = {
   shape?: "rect" | "rounded" | "circle" | "pill"
   radius?: number
   fit?: "cover" | "contain"
+  alt?: string
 }
 
 const RADIUS = { rect: "0", circle: "50%", pill: "9999px" } as const
 
-function ImageSlot({ id, src, placeholder, shape = "rounded", radius = 12, fit = "cover" }: ImageSlotProps) {
+function ImageSlot({ id, src, placeholder, shape = "rounded", radius = 12, fit = "cover", alt = "" }: ImageSlotProps) {
   const url = STORED[id] || src || ""
   const borderRadius = shape === "rounded" ? `${radius}px` : RADIUS[shape]
   return (
     <div id={id} className="image-slot" data-image-slot="" data-filled={url ? "" : undefined}>
       <div className="frame" style={{ borderRadius }}>
         {url ? (
-          <img src={url} alt="" draggable={false} style={{ objectFit: fit }} />
+          <img src={url} alt={alt} loading="lazy" decoding="async" draggable={false} style={{ objectFit: fit }} />
         ) : (
           <div className="empty">
             <svg

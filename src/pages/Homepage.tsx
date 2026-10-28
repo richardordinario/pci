@@ -86,6 +86,8 @@ export default function Homepage({
     const m = new HomepageMotion(rootRef.current!, { ambientMotion, rippleSpeed })
     motion.current = m
     m.start()
+    // Entrance states are set, so the page can be shown (see the boot gate in index.html).
+    document.documentElement.removeAttribute("data-boot")
     return () => {
       m.destroy()
       motion.current = null
@@ -347,7 +349,7 @@ export default function Homepage({
       <div aria-hidden="true" style={{ position: "absolute", left: "0", right: "0", bottom: "0", height: "34%", pointerEvents: "none", background: "linear-gradient(180deg,rgba(38,38,38,0) 0%,rgba(38,38,38,.7) 60%,#262626 100%)" }}></div>
       {isDesktop && (<>
         <div data-reveal="" data-delay="250" style={{ position: "absolute", left: "50%", bottom: "0", width: "min(66vw,980px)", marginLeft: "calc(min(66vw,980px) / -2)", zIndex: "2", pointerEvents: "none" }}>
-          <img src="assets/hero-duo.png" alt="Two PCI Tech Center trainers in branded polo shirts using VR headsets and controllers" style={{ width: "100%", height: "auto", display: "block", WebkitMaskImage: "linear-gradient(180deg,#000 62%,transparent 98%)", maskImage: "linear-gradient(180deg,#000 62%,transparent 98%)" }} />
+          <img src="assets/hero-duo.webp" width={1448} height={1086} fetchPriority="high" alt="Two PCI Tech Center trainers in branded polo shirts using VR headsets and controllers" style={{ width: "100%", height: "auto", display: "block", WebkitMaskImage: "linear-gradient(180deg,#000 62%,transparent 98%)", maskImage: "linear-gradient(180deg,#000 62%,transparent 98%)" }} />
         </div>
       </>)}
       <div style={{ position: "relative", maxWidth: "1280px", width: "100%", margin: "0 auto", flex: "1", display: "flex", flexDirection: "column" }}>
@@ -358,7 +360,7 @@ export default function Homepage({
         </div>
         {isMobile && (<>
           <div data-reveal="" data-delay="250" style={{ position: "relative", zIndex: "2", margin: "-27vw -24px 0" }}>
-            <img src="assets/hero-duo.png" alt="Two PCI Tech Center trainers in branded polo shirts using VR headsets and controllers" style={{ width: "100%", height: "auto", display: "block", WebkitMaskImage: "linear-gradient(180deg,#000 62%,transparent 98%)", maskImage: "linear-gradient(180deg,#000 62%,transparent 98%)" }} />
+            <img src="assets/hero-duo.webp" width={1448} height={1086} fetchPriority="high" alt="Two PCI Tech Center trainers in branded polo shirts using VR headsets and controllers" style={{ width: "100%", height: "auto", display: "block", WebkitMaskImage: "linear-gradient(180deg,#000 62%,transparent 98%)", maskImage: "linear-gradient(180deg,#000 62%,transparent 98%)" }} />
           </div>
         </>)}
         <div style={{ position: "relative", zIndex: "3", marginTop: "auto", display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "flex-end", gap: "32px", paddingTop: "24px" }}>
@@ -440,7 +442,7 @@ export default function Homepage({
           <div style={{ position: "relative", flex: "1", minHeight: "clamp(480px,56vw,820px)", display: "flex", alignItems: "flex-end", justifyContent: "flex-end" }}>
             <div data-glow2="0" aria-hidden="true" style={{ position: "absolute", inset: "-8%", pointerEvents: "none", willChange: "transform", background: "radial-gradient(ellipse 46% 40% at 60% 46%,rgba(124,194,67,.95) 0%,rgba(124,194,67,.6) 32%,rgba(124,194,67,.22) 62%,rgba(124,194,67,0) 100%)" }}></div>
             <div data-glow2="1" aria-hidden="true" style={{ position: "absolute", inset: "-8%", pointerEvents: "none", willChange: "transform", background: "radial-gradient(ellipse 22% 20% at 60% 40%,rgba(197,232,154,.8) 0%,rgba(197,232,154,0) 100%)" }}></div>
-            <div data-reveal="" data-delay="100" style={{ position: "relative", width: "min(92%,680px)" }}><div data-bubble="" data-phase="5"><img src="assets/visor-portrait-v2.png" alt="PCI Tech Center learner wearing a mixed-reality headset" loading="lazy" style={{ width: "100%", height: "auto", display: "block", WebkitMaskImage: "linear-gradient(180deg,#000 72%,transparent 100%)", maskImage: "linear-gradient(180deg,#000 72%,transparent 100%)" }} /></div></div>
+            <div data-reveal="" data-delay="100" style={{ position: "relative", width: "min(92%,680px)" }}><div data-bubble="" data-phase="5"><img src="assets/visor-portrait-v2.webp" width={720} height={858} decoding="async" alt="PCI Tech Center learner wearing a mixed-reality headset" loading="lazy" style={{ width: "100%", height: "auto", display: "block", WebkitMaskImage: "linear-gradient(180deg,#000 72%,transparent 100%)", maskImage: "linear-gradient(180deg,#000 72%,transparent 100%)" }} /></div></div>
             {showAccredDesktop && (<>
               <div style={{ position: "absolute", top: "8%", left: "0", width: "min(240px,36%)", zIndex: "2" }}><div data-reveal="" data-delay="300"><div data-bubble="" data-phase="0"><div style={{ display: "flex", alignItems: "center", gap: "12px", background: "var(--near-black)", border: "1px solid var(--gray-medium)", borderRadius: "var(--radius-md)", padding: "12px 16px 12px 12px", boxShadow: "var(--shadow-3)" }}><FeatureIcon icon="graduation-cap" size={40} variant="green"></FeatureIcon><span style={{ fontSize: "14px", lineHeight: "1.35", fontWeight: "600", color: "var(--white)" }}>Official Coursera Partner for the Philippines</span></div></div></div></div>
               <div style={{ position: "absolute", top: "26%", left: "0", width: "min(240px,36%)", zIndex: "2" }}><div data-reveal="" data-delay="440"><div data-bubble="" data-phase="1"><div style={{ display: "flex", alignItems: "center", gap: "12px", background: "var(--near-black)", border: "1px solid var(--gray-medium)", borderRadius: "var(--radius-md)", padding: "12px 16px 12px 12px", boxShadow: "var(--shadow-3)" }}><FeatureIcon icon="badge-check" size={40} variant="green"></FeatureIcon><span style={{ fontSize: "14px", lineHeight: "1.35", fontWeight: "600", color: "var(--white)" }}>PHILGEPS Platinum Accredited</span></div></div></div></div>
@@ -827,7 +829,7 @@ export default function Homepage({
         <div data-stagger="" style={{ display: "grid", gridTemplateColumns: pfCols, gridAutoRows: pfRow, gap: "16px" }}>
           {projects.map((s, s_i) => (<Fragment key={s_i}>
             <article className="hv-shadow3" style={{ position: "relative", gridColumn: s.col, gridRow: s.row, borderRadius: "var(--radius-xl)", overflow: "hidden", background: "var(--near-black)", isolation: "isolate" }}>
-              <div className="hv-zoom106" style={{ position: "absolute", inset: "0", transition: "transform 900ms cubic-bezier(0.22,1,0.36,1)" }}><ImageSlot id={s.slot} src={s.src} shape="rect" placeholder={s.photo}></ImageSlot></div>
+              <div className="hv-zoom106" style={{ position: "absolute", inset: "0", transition: "transform 900ms cubic-bezier(0.22,1,0.36,1)" }}><ImageSlot id={s.slot} src={s.src} shape="rect" placeholder={s.photo} alt={s.title + " project by PCI Tech Center"}></ImageSlot></div>
               <div aria-hidden="true" style={{ position: "absolute", inset: "0", background: "linear-gradient(180deg,rgba(38,38,38,0) 40%,rgba(38,38,38,.85) 100%)", pointerEvents: "none" }}></div>
               <div style={{ position: "absolute", top: "16px", left: "16px", right: "16px", display: "flex", justifyContent: "space-between", alignItems: "center", pointerEvents: "none" }}>
                 <span style={{ fontSize: "12px", fontWeight: "600", color: "var(--near-black)", background: "var(--white)", padding: "6px 12px", borderRadius: "999px" }}>{s.sector}</span>

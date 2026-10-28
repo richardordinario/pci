@@ -1,0 +1,13 @@
+{
+  "name": "PCI Tech Center",
+  "short_name": "PCI Tech",
+  "description": "EdTech solutions for academe, government, and industry in the Philippines.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#262626",
+  "theme_color": "#262626",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

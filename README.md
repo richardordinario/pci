@@ -17,9 +17,9 @@ Section toggles (same defaults as the design's props): pass `showSolutions`, `sh
 `public/assets/` holds the images exactly as the design serves them. The original uploads from Claude Design
 (`uploads/`) are kept in `design-assets-src/` (git-ignored) and were processed the same way the design did:
 
-- `hero-duo.png`: the "VR Tech Center Duo" upload, unchanged (pixel-identical)
-- `visor-portrait-v2.png`: the visor portrait downscaled to 720×858
-- `portfolio/*.png`: downscaled from 5000×2813 to 960×540; DOST SEI uses the image stored in the design's image slot (`dost-sei.webp`)
+- `hero-duo.webp`: the "VR Tech Center Duo" upload, encoded as WebP (q88) for page speed
+- `visor-portrait-v2.webp`: the visor portrait downscaled to 720×858, WebP (q88)
+- `portfolio/*.webp`: downscaled from 5000×2813 to 960×540, WebP (q88); DOST SEI uses the image stored in the design's image slot (`dost-sei.webp`)
 - `partners/partner-NN.png`: cropped to the logo, fit in 446×150 with white padding; 04 and 05 are the design's own files
 
 ## Contact form email
@@ -44,6 +44,13 @@ Replies go straight to the visitor (`reply_to` is their email).
 npm run dev      # dev server
 npm run build    # type-check + production build
 ```
+
+## SEO
+
+- `index.html` holds the title, meta description, canonical URL, Open Graph/Twitter tags, and Organization/LocalBusiness JSON-LD.
+- `npm run build` prerenders the page into `dist/index.html` (`src/entry-server.tsx` + `scripts/prerender.mjs`), so crawlers and link previews see the full content without JS. It also writes `robots.txt` and `sitemap.xml`.
+- The production URL defaults to `https://www.pcitech.com.ph`. Set `VITE_SITE_URL` in Vercel to change it.
+- Share image: `public/og-image.jpg` (1200×630).
 
 ## Deploy to Vercel
 
