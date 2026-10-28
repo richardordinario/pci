@@ -1,0 +1,29 @@
+/* Page-level styles from "Homepage v2.dc.html" <helmet> */
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:#FFFFFF;color:#262626;font-family:"Poppins",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#457A1E}
+a:hover{color:#262626}
+*:focus-visible{outline:3px solid #7CC243;outline-offset:3px;border-radius:4px}
+
+/* `style-hover` attributes from the design. The dc-runtime compiles each one
+   into a :hover rule with every declaration marked !important. */
+.hv-nav:hover{text-decoration:underline!important;text-decoration-color:var(--pci-green)!important;text-decoration-thickness:3px!important;text-underline-offset:10px!important}
+.hv-tint:hover{background:var(--green-tint)!important}
+.hv-green:hover{color:var(--pci-green)!important}
+.hv-fb:hover{background:var(--pci-green-hover)!important}
+.hv-social:hover{border-color:var(--pci-green)!important;color:var(--pci-green)!important}
+.hv-zoom105:hover{transform:scale(1.05)!important}
+.hv-zoom106:hover{transform:scale(1.06)!important}
+.hv-shadow3:hover{box-shadow:var(--shadow-3)!important}
+.hv-lift:hover{transform:translateY(-4px)!important;box-shadow:var(--shadow-3)!important}
+
+/* <image-slot> (read-only outside the Claude Design runtime) */
+.image-slot{display:block;position:relative;font:13px/1.3 system-ui,-apple-system,sans-serif;width:100%;height:100%;aspect-ratio:3/2}
+.image-slot .frame{position:absolute;inset:0;overflow:hidden;background:rgba(127,127,127,.08)}
+.image-slot .frame img{position:absolute;inset:0;width:100%;height:100%;max-width:none;-webkit-user-drag:none;user-select:none}
+.image-slot .empty{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:12px;box-sizing:border-box;user-select:none}
+.image-slot .empty svg{opacity:.45}
+.image-slot .empty .cap{max-width:90%;font-weight:500;letter-spacing:.01em;opacity:.75}
+.image-slot .ring{position:absolute;inset:0;pointer-events:none;border:1.5px dashed currentColor;opacity:.35}
+.image-slot[data-filled] .ring{display:none}

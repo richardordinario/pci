@@ -1,0 +1,51 @@
+/* PCI Tech Center — color tokens from Brand Book v1.0 (2026), §8 Color System.
+   "Use the official PCI color palette exclusively." Primary values may not be approximated. */
+:root{
+/* Primary */
+--pci-green:#7CC243;      /* RGB 124,194,67 · CMYK 36,0,65,24 · PMS 368 C / 376 C */
+--near-black:#262626;     /* RGB 38,38,38 — use instead of pure black */
+--off-white:#F2F2F2;      /* RGB 242,242,242 */
+--white:#FFFFFF;
+/* Secondary & accent */
+--green-tint:#EAF5D9;     /* table highlights, callouts, info panels */
+--green-mid:#C5E89A;
+--gray-medium:#4A4A4A;    /* secondary text, subheads, captions */
+--gray-light:#AAAAAA;     /* email footer text, disabled */
+--gray-rule:#CCCCCC;      /* 1pt internal rules / table separators */
+/* Co-brand (Coursera materials only) */
+--coursera-blue:#0056D2;
+/* Interaction states — "Hover state: darken fill by 10%" (§20) */
+--pci-green-hover:#70AF3C;
+--pci-green-press:#639B36;
+/* Intentional additions (functional, not brand colors — see readme) */
+--green-text:#457A1E;     /* AA-safe green for small labels/links on light grounds */
+--danger:#C62828;--danger-bg:#FDECEC;
+
+/* Semantic aliases */
+--brand-primary:var(--pci-green);
+--fg-1:var(--near-black);
+--fg-2:var(--gray-medium);
+--fg-3:var(--gray-medium);
+--fg-disabled:var(--gray-light);
+--fg-on-green:var(--white);
+--fg-on-dark:var(--white);
+--fg-on-dark-2:var(--green-mid);
+--fg-accent:var(--green-text);
+--fg-link:var(--green-text);
+--fg-link-hover:var(--near-black);
+
+--surface-page:var(--white);
+--surface-subtle:var(--off-white);
+--surface-tint:var(--green-tint);
+--surface-card:var(--white);
+--surface-green:var(--pci-green);
+--surface-dark:var(--near-black);
+
+--border-1:var(--gray-rule);
+--border-2:var(--gray-light);
+--border-focus:var(--pci-green);
+--rule-accent:var(--pci-green);
+
+--success:var(--green-text);--success-bg:var(--green-tint);
+--info:var(--near-black);--info-bg:var(--off-white);
+}

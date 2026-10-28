@@ -1,0 +1,80 @@
+/* Tailwind without Preflight: the Claude Design page renders on browser
+   defaults (no global box-sizing / margin reset), so we keep that behaviour
+   to stay pixel-identical with the source design. */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* PCI Tech Center design system (copied verbatim from Claude Design _ds/) */
+@import "./styles/fonts.css";
+@import "./styles/colors.css";
+@import "./styles/typography.css";
+@import "./styles/spacing.css";
+@import "./styles/effects.css";
+@import "./styles/base.css";
+@import "./styles/page.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* shadcn theme bound to PCI tokens */
+@theme inline {
+  --font-sans: var(--font-body);
+  --font-heading: "Montserrat", Arial, sans-serif;
+  --font-body: "Poppins", Arial, sans-serif;
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+
+  --color-pci-green: #7cc243;
+  --color-pci-green-hover: #70af3c;
+  --color-pci-green-press: #639b36;
+  --color-near-black: #262626;
+  --color-off-white: #f2f2f2;
+  --color-green-tint: #eaf5d9;
+  --color-green-mid: #c5e89a;
+  --color-green-text: #457a1e;
+  --color-gray-medium: #4a4a4a;
+  --color-gray-light: #aaaaaa;
+  --color-gray-rule: #cccccc;
+  --color-coursera-blue: #0056d2;
+  --color-danger: #c62828;
+}
+
+:root {
+  --background: var(--white);
+  --foreground: var(--near-black);
+  --card: var(--white);
+  --card-foreground: var(--near-black);
+  --popover: var(--white);
+  --popover-foreground: var(--near-black);
+  --primary: var(--pci-green);
+  --primary-foreground: var(--white);
+  --secondary: var(--off-white);
+  --secondary-foreground: var(--near-black);
+  --muted: var(--off-white);
+  --muted-foreground: var(--gray-medium);
+  --accent: var(--green-tint);
+  --accent-foreground: var(--near-black);
+  --destructive: var(--danger);
+  --border: var(--gray-rule);
+  --input: var(--gray-rule);
+  --ring: var(--pci-green);
+  --radius: 0.75rem;
+}
